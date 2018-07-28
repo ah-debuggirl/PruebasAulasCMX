@@ -22,7 +22,19 @@ Write function potatoes with
     int parameter w0 - initial weight -
     int parameter p1 - final percent of water -
 
+
 potatoesshould return the final weight coming out of the oven w1 truncated as an int.
 Example:
 
 potatoes(99, 100, 98) --> 50
+
+* Código:
+
+function potatoes(p0, w0, p1) {
+   let dryPercent = (100-p0)/100;
+   let dryPotatoes = w0 * dryPercent;
+   let final = dryPotatoes / ((100 - p1) / 100);
+   return Math.trunc(final)
+ };
+
+ potatoes(99, 100, 98)
